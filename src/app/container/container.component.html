@@ -1,0 +1,20 @@
+<header>
+  <div id="header1">
+    <p>AGENDA</p>
+  </div>
+  <div id="header2">
+  </div>
+  <div id="header3">
+  </div>
+</header>
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Estações</a></li>
+      <li class="breadcrumb-item" ><a [routerLink]="['/contatos']">Contatos</a></li>
+      <li class="breadcrumb-item"><a> opção 3</a></li>
+    </ol>
+  </nav>
+  <router-outlet></router-outlet>  
+</div>
+<p>&copy; @DateTime.Now.Year - Cecoe </p>

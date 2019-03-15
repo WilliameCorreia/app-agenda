@@ -1,0 +1,119 @@
+<!-- <P>ID:{{detalhesEstacao | json}}</P> -->
+<div class="col-10 cardEstacao">
+    <div class="card">
+        <div class="card-header">
+            <h6>Dados da Estação</h6>
+        </div>
+        <div class="card-body">
+            <div>
+                <h6 class="modal-title" id="TitleEstacao">
+                    Estação
+                </h6>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label for="ccmonth">Tipo</label>
+                    <select class="form-control" id="ccmonth" [attr.disabled]="enableCampos">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nome da estação"
+                            value={{detalhesEstacao.nome}} [readonly]="enableCampos">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="id">Id</label>
+                        <input type="text" class="form-control" id="id" placeholder="Id"
+                            value={{detalhesEstacao.estacaoid}} [readonly]="enableCampos">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+            <div>
+                <h6 class="modal-title" id="TitleOperacao">
+                    Operação
+                </h6>
+            </div>
+            <div class="row" *ngFor="let operador of detalhesEstacao.operadores">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nome da estação"
+                            value={{operador.nome}} [readonly]="enableCampos">
+                    </div>
+                </div>
+                <div class="col-sm-4" *ngFor="let telefone of operador.telefones">
+                    <div class="form-group">
+                        <label for="fone">Fone</label>
+                        <input type="text" class="form-control" id="fone" placeholder="fone" value={{telefone.fone}}
+                        [readonly]="enableCampos">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+            <div>
+                <h6 class="modal-title" id="TitleSupervisor">
+                    Supervisão
+                </h6>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome da estação"
+                            value={{detalhesEstacao.supervisor.nome}} [readonly]="enableCampos">
+                    </div>
+                </div>
+                <div class="col-sm-4" *ngFor="let tel of detalhesEstacao.supervisor.telefones">
+                    <div class="form-group">
+                        <label for="fone">Fone</label>
+                        <input type="text" class="form-control" id="fone" placeholder="fone" value="{{tel.fone}}"
+                        [readonly]="enableCampos">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+            <div>
+                <h6 class="modal-title" id="TitleEnel">
+                    Enel
+                </h6>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="class">Classe</label>
+                        <input type="text" class="form-control" id="class" placeholder="Nome da estação"
+                            value={{detalhesEstacao.dadosenel.classe}} [readonly]="enableCampos">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="end">Endereço</label>
+                        <input type="text" class="form-control" id="end" placeholder="Endereço"
+                            value="{{detalhesEstacao.dadosenel.endereco}}" [readonly]="enableCampos">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="uc">UC</label>
+                        <input type="text" class="form-control" id="uc" placeholder="fone"
+                            value="{{detalhesEstacao.dadosenel.uc}}" [readonly]="enableCampos">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+    </div>
+    <div id="buttons">
+        <button class="btn btn-primary">Adicionar</button>
+        <button (click)="enable()" class="btn btn-success">Editar</button>
+        <button class="btn btn-danger">Excluir</button>
+        <button [routerLink]="['']" class="btn btn-dark">Voltar</button>
+    </div>
+</div>
