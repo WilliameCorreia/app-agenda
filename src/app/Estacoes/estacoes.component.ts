@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AppService } from '../app.service';
+import { EstacoesService } from '../Estacoes/estacoes.service';
 import { estacao } from '../modelo/Estacao';
 import { error } from 'util';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
@@ -21,13 +21,13 @@ export class EstacoesComponent implements OnInit {
   @ViewChild (MatPaginator) paginator: MatPaginator;
 
 
-  constructor(private usuarioService : AppService,
+  constructor(private estacoesService : EstacoesService,
               private route : ActivatedRoute,
               private router : Router) { }
 
   ngOnInit() {
 
-    this.estacao = this.usuarioService.getEstacao();
+    this.estacao = this.estacoesService.getEstacao();
     this.dataSource = new MatTableDataSource(this.estacao);
     this.dataSource.paginator = this.paginator;
 

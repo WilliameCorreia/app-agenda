@@ -1,8 +1,8 @@
-import { estacao } from './../modelo/Estacao';
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AppService } from '../app.service';
+import { EstacoesService } from 'src/app/Estacoes/estacoes.service';
+
 
 @Component({
   selector: 'app-detalhe-estacao',
@@ -18,7 +18,7 @@ export class DetalheEstacaoComponent implements OnInit {
   enableCampos: boolean = true;
 
   constructor(private route: ActivatedRoute,
-              private estacaoService: AppService,
+              private estacaoService: EstacoesService,
               private routes: Router
               ) { }
 

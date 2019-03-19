@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { estacao } from './modelo/Estacao';
+import { estacao } from 'src/app/modelo/Estacao';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { forEach } from '@angular/router/src/utils/collection';
@@ -7,7 +7,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 @Injectable({
   providedIn: 'root'
 })
-export class AppService {
+export class EstacoesService {
 
   //private _url = 'https://localhost:5001/api/estacao';
 

@@ -2,8 +2,8 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { EstacaoNaoEncontradaComponent } from './estacao-nao-encontrada/estacao-nao-encontrada.component';
-import { DetalheEstacaoComponent } from './detalhe-estacao/detalhe-estacao.component';
+import { EstacaoNaoEncontradaComponent } from './Estacoes/estacao-nao-encontrada/estacao-nao-encontrada.component';
+import { DetalheEstacaoComponent } from './Estacoes/detalhe-estacao/detalhe-estacao.component';
 import { ContatosComponent } from './contatos/contatos.component';
 import { EstacoesComponent } from './Estacoes/estacoes.component';
 
