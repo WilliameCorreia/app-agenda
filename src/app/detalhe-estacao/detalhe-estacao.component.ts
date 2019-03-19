@@ -1,6 +1,6 @@
 import { estacao } from './../modelo/Estacao';
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppService } from '../app.service';
 
@@ -17,12 +17,19 @@ export class DetalheEstacaoComponent implements OnInit {
   detalhesEstacao: any;
   enableCampos: boolean = true;
 
-  constructor(private route: ActivatedRoute, private estacaoService: AppService) { }
+  constructor(private route: ActivatedRoute,
+              private estacaoService: AppService,
+              private routes: Router
+              ) { }
 
   ngOnInit() {
     this.inscricao = this.route.params.subscribe((params: any) =>{
       this.id = params['id'];
       this.detalhesEstacao = this.estacaoService.PesquisarEstacao(this.id);
+
+      if(this.detalhesEstacao == null){
+        this.routes.navigate(['/estacao-nao-encontrada']);
+      }
       } 
     );
   } 

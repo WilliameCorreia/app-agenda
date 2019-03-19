@@ -1,24 +1,29 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from '../app.service';
 import { estacao } from '../modelo/Estacao';
 import { error } from 'util';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { query } from '@angular/core/src/render3';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
-  selector: 'app-lista-pesquisa',
-  templateUrl: './lista-pesquisa.component.html',
-  styleUrls: ['./lista-pesquisa.component.css']
+  selector: 'app-estacoes',
+  templateUrl: './estacoes.component.html',
+  styleUrls: ['./estacoes.component.css']
 })
-export class ListaPesquisaComponent implements OnInit {
+export class EstacoesComponent implements OnInit {
 
-  
+  pagina: number = 5;
   estacao : estacao[];  
   dataSource;
 
   @ViewChild (MatPaginator) paginator: MatPaginator;
 
 
-  constructor(private usuarioService : AppService) { }
+  constructor(private usuarioService : AppService,
+              private route : ActivatedRoute,
+              private router : Router) { }
 
   ngOnInit() {
 
@@ -33,6 +38,7 @@ export class ListaPesquisaComponent implements OnInit {
           || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
           || data.operadores[0].nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
     };
+
     /* this.usuarioService.getEstacao()
       .subscribe(clienteApi => this.estacao = clienteApi),
         error => console.error(error); */
@@ -45,4 +51,5 @@ export class ListaPesquisaComponent implements OnInit {
     this.dataSource.filter = filterValue;
     estacao
   }
+
 }
