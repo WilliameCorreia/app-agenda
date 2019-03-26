@@ -1,0 +1,432 @@
+{
+  "estacoes":[
+    {
+      "id": 1,
+      "tipo": "1",
+      "nome": "EPC",
+      "operadores": [
+        {
+          "operadorid": 1,
+          "nome": "Manoel",
+          "telefones": [
+            {
+              "telefoneid": null,
+              "tipo": 2,
+              "fone": "xxxxxxxxx"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "123413241342"
+            }
+          ]
+        },{
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": null,
+              "tipo": 2,
+              "fone": "kkkkkkkkk"
+            },
+            {
+              "telefoneid": 1,
+              "tipo": 1,
+              "fone": "kkkkkkkkkkk"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 1,
+        "area": "Vertente",
+        "nome": "Abraão",
+        "telefones": [
+          {
+            "telefoneid": 1,
+            "tipo": 1,
+            "fone": "xxxxxxxxx"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 1,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Presidente Castelo Branco nº 1200",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    },
+    {
+      "id": 2,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    },
+    {
+      "id": 3,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 4,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 5,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 6,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 7,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 8,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 9,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }, {
+      "id": 10,
+      "tipo": "2",
+      "nome": "Pajeú",
+      "operadores": [
+        {
+          "operadorid": 2,
+          "nome": "williame",
+          "telefones": [
+            {
+              "telefoneid": 1,
+              "tipo": 2,
+              "fone": "yyyyyyyyy"
+            },
+            {
+              "telefoneid": 2,
+              "tipo": 1,
+              "fone": "987654321"
+            }
+          ]
+        }
+      ],
+      "supervisor": {
+        "supervisorid": 2,
+        "area": "Isolado",
+        "nome": "Joel",
+        "telefones": [
+          {
+            "telefoneid": 2,
+            "tipo": 1,
+            "fone": "yyyyyyyyyy"
+          }
+        ]
+      },
+      "dadosenel": {
+        "dadosenelid": 2,
+        "nome_cliente": "Cagece",
+        "endereco": "Av. Dom Manoel",
+        "classe": "nao sei",
+        "uc": 2
+      }
+    }
+  ]
+}

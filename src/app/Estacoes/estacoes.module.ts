@@ -1,3 +1,4 @@
+import { EstacoesRoutingModule } from './estacoes.routing.module';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,7 +8,6 @@ import { DetalheEstacaoComponent } from './detalhe-estacao/detalhe-estacao.compo
 import { EstacaoNaoEncontradaComponent } from './estacao-nao-encontrada/estacao-nao-encontrada.component';
 import { EstacoesComponent } from './estacoes.component';
 import { EstacoesService } from './estacoes.service';
-import { routing } from '../app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
 
@@ -21,7 +21,7 @@ import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule,
         CommonModule,
         FormsModule,
         HttpClientModule,
-        routing,
+        EstacoesRoutingModule,
         BrowserAnimationsModule,
         MatTableModule,
         MatFormFieldModule,
@@ -30,7 +30,7 @@ import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule,
         MatButtonModule
     ],
     exports: [],
-    providers: [EstacoesService]
+    providers: []
 })
 
 export class estacoesModule { }

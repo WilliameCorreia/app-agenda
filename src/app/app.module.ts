@@ -6,7 +6,7 @@ import { estacoesModule } from './Estacoes/estacoes.module';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { ContatosComponent } from './contatos/contatos.component';
-import { routing } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { routing } from './app.routing';
   imports: [
     BrowserModule,
     HttpClientModule,
-    routing,
+    AppRoutingModule,
     estacoesModule    
   ],
   providers: [],

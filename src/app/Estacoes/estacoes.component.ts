@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { EstacoesService } from '../Estacoes/estacoes.service';
 import { estacao } from '../modelo/Estacao';
 import { error } from 'util';
@@ -14,42 +14,35 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 })
 export class EstacoesComponent implements OnInit {
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns: string[] = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
+
   pagina: number = 5;
-  estacao : estacao[];  
-  dataSource;
+  estacao: estacao[];
+  dataSource = new MatTableDataSource();
 
-  @ViewChild (MatPaginator) paginator: MatPaginator;
-
-
-  constructor(private estacoesService : EstacoesService,
-              private route : ActivatedRoute,
-              private router : Router) { }
+  constructor(private estacoesService: EstacoesService) {
+    this.dataSource.filterPredicate = (data: estacao, filter: string) => {
+      return data.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
+        || data.tipo.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
+        || data.supervisor.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
+        || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
+        || data.operadores[0].nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
+    };
+  }
 
   ngOnInit() {
 
-    this.estacao = this.estacoesService.getEstacao();
-    this.dataSource = new MatTableDataSource(this.estacao);
+    this.estacoesService.getEstacoes()
+      .subscribe(dados => {
+        this.dataSource.data = dados;
+      });
     this.dataSource.paginator = this.paginator;
 
-    this.dataSource.filterPredicate = (data: estacao, filter: string) => {
-      return data.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
-          || data.tipo.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
-          || data.supervisor.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
-          || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
-          || data.operadores[0].nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
-    };
-
-    /* this.usuarioService.getEstacao()
-      .subscribe(clienteApi => this.estacao = clienteApi),
-        error => console.error(error); */
-  }  
+  }
   
-  displayedColumns: string[] = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
-  
-
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue;
-    estacao
   }
 
 }
