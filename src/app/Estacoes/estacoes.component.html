@@ -1,4 +1,4 @@
-<div id="TabelaEstacao">
+<div id="TabelaEstacao" *ngIf="false; else Loanding">
     <mat-form-field id="filtroEstacao">
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
     </mat-form-field>
@@ -50,3 +50,7 @@
     <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons>
     </mat-paginator>
   </div>
+  <ng-template #Loanding>
+    <span>Carregando....</span>
+  </ng-template>
+  

@@ -4,8 +4,6 @@ import { EstacoesService } from '../Estacoes/estacoes.service';
 import { estacao } from '../modelo/Estacao';
 import { error } from 'util';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { query } from '@angular/core/src/render3';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-estacoes',
@@ -15,7 +13,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 export class EstacoesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  displayedColumns: string[] = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
+  displayedColumns: string[]; 
 
   pagina: number = 5;
   estacao: estacao[];
@@ -32,12 +30,14 @@ export class EstacoesComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log(this.dataSource)
     this.estacoesService.getEstacoes()
       .subscribe(dados => {
         this.dataSource.data = dados;
+        this.displayedColumns = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
+        this.dataSource.paginator = this.paginator;
       });
-    this.dataSource.paginator = this.paginator;
+    
 
   }
   

@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { EstacoesService } from 'src/app/Estacoes/estacoes.service';
+import { estacao } from 'src/app/modelo/Estacao';
 
 
 @Component({
@@ -13,32 +14,32 @@ import { EstacoesService } from 'src/app/Estacoes/estacoes.service';
 export class DetalheEstacaoComponent implements OnInit {
 
   id: number;
-  inscricao : Subscription;
-  detalhesEstacao: any;
+  inscricao: Subscription;
+  detalhesEstacao: estacao;
   enableCampos: boolean = true;
 
   constructor(private route: ActivatedRoute,
-              private estacaoService: EstacoesService,
-              private routes: Router
-              ) { }
+    private estacaoService: EstacoesService,
+    private routes: Router
+  ) { }
 
   ngOnInit() {
-    this.inscricao = this.route.params.subscribe((params: any) =>{
+    this.inscricao = this.route.params.subscribe((params: any) => {
       this.id = params['id'];
-      this.detalhesEstacao = this.estacaoService.PesquisarEstacao(this.id);
+      this.estacaoService.PesquisarEstacao(this.id).subscribe(dados => {
+        this.detalhesEstacao = dados;
+        if (this.detalhesEstacao == null) {
+          this.routes.navigate(['/estacao-nao-encontrada']);
+        }
+      });      
+    })
+  }
 
-      if(this.detalhesEstacao == null){
-        this.routes.navigate(['/estacao-nao-encontrada']);
-      }
-      } 
-    );
-  } 
-
-  enable(){
+  enable() {
     this.enableCampos = !this.enableCampos;
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.inscricao.unsubscribe();
   }
 

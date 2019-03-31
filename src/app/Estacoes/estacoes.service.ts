@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { estacao } from 'src/app/modelo/Estacao';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { delay  } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,20 +18,13 @@ export class EstacoesService {
   constructor(private _http: HttpClient) { }
 
  getEstacoes(){
-   return this._http.get<estacao[]>(this.Api);
+   return this._http.get<estacao[]>(this.Api).pipe(
+     delay(2000)
+   );
  } 
 
   PesquisarEstacao(id: Number){
-    
-    let est = this.getEstacoes();
-
-    /* for (let i = 0; i < est.length; i++) {
-      let obj = est[i];
-      if(obj.estacaoid == id){
-        return obj;
-      }              
-    } 
-    return null;*/
+    return this._http.get<estacao>(`${this.Api}/${id}`);
   }
 
 }
