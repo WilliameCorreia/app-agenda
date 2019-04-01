@@ -8,6 +8,7 @@ import { ContainerComponent } from './container/container.component';
 import { ContatosComponent } from './contatos/contatos.component';
 import { AppRoutingModule } from './app.routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    estacoesModule    
+    estacoesModule      
   ],
   providers: [],
   bootstrap: [AppComponent]

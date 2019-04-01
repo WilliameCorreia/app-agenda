@@ -1,23 +1,24 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { EstacoesService } from '../Estacoes/estacoes.service';
 import { estacao } from '../modelo/Estacao';
-import { error } from 'util';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { Subject, empty, Subscription, Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-estacoes',
   templateUrl: './estacoes.component.html',
   styleUrls: ['./estacoes.component.css']
 })
-export class EstacoesComponent implements OnInit {
+export class EstacoesComponent implements OnInit, OnDestroy {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  displayedColumns: string[]; 
+  displayedColumns: string[];
 
   pagina: number = 5;
   estacao: estacao[];
   dataSource = new MatTableDataSource();
+  error$ = new Subject<boolean>();
+  subcriber = new Subscription();
 
   constructor(private estacoesService: EstacoesService) {
     this.dataSource.filterPredicate = (data: estacao, filter: string) => {
@@ -27,22 +28,30 @@ export class EstacoesComponent implements OnInit {
         || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
         || data.operadores[0].nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
     };
+    console.log(this.dataSource)
   }
 
   ngOnInit() {
-    console.log(this.dataSource)
-    this.estacoesService.getEstacoes()
+    this.subcriber = this.estacoesService.getEstacoes()
       .subscribe(dados => {
         this.dataSource.data = dados;
         this.displayedColumns = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
-        this.dataSource.paginator = this.paginator;
-      });
-    
-
+        this.dataSource.paginator = this.paginator;  
+      },
+        error => {
+          console.log(error)
+          this.error$.next(true);
+          return empty();
+        },
+      );
   }
-  
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue;
+  }
+
+  ngOnDestroy(): void {
+    this.subcriber.unsubscribe();    
   }
 
 }

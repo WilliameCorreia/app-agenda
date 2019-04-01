@@ -7,10 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetalheEstacaoComponent } from './detalhe-estacao/detalhe-estacao.component';
 import { EstacaoNaoEncontradaComponent } from './estacao-nao-encontrada/estacao-nao-encontrada.component';
 import { EstacoesComponent } from './estacoes.component';
-import { EstacoesService } from './estacoes.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
     declarations: [
         DetalheEstacaoComponent,
@@ -27,7 +26,8 @@ import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule,
         MatFormFieldModule,
         MatInputModule,
         MatPaginatorModule,
-        MatButtonModule
+        MatButtonModule,
+        MatProgressSpinnerModule
     ],
     exports: [],
     providers: []

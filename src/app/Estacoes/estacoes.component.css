@@ -24,4 +24,6 @@ table {
   table{
     text-align: left;
   }
-  
+  .spinner{
+    text-align: -webkit-center;
+  }
