@@ -17,6 +17,7 @@ export class DetalheEstacaoComponent implements OnInit {
   inscricao: Subscription;
   detalhesEstacao: estacao;
   enableCampos: boolean = true;
+  editCancel: string = "Editar";
 
   constructor(private route: ActivatedRoute,
     private estacaoService: EstacoesService,
@@ -40,10 +41,20 @@ export class DetalheEstacaoComponent implements OnInit {
 
   enable() {
     this.enableCampos = !this.enableCampos;
+    if(this.enableCampos){
+      this.editCancel = "Editar"
+    }else{
+      this.editCancel = "Cancelar"
+    }
   }
 
   ngOnDestroy() {
     this.inscricao.unsubscribe();
+  }
+
+  update(estacao: estacao){
+    console.log(estacao);
+    this.estacaoService.addEstacao(estacao);
   }
 
 }

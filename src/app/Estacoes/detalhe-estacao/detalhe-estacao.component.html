@@ -1,4 +1,6 @@
-<!-- <P>ID:{{detalhesEstacao | json}}</P> -->
+<form>
+
+</form>
 <div class="col-10 cardEstacao" *ngIf="detalhesEstacao">
     <div class="card">
         <div class="card-header">
@@ -13,7 +15,7 @@
             <div class="row">
                 <div class="form-group col-sm-3">
                     <label for="ccmonth">Tipo</label>
-                    <select class="form-control" id="ccmonth" [attr.disabled]="enableCampos">
+                    <select [(ngModel)]="detalhesEstacao.tipo" class="form-control" id="ccmonth" [disabled]="enableCampos">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -23,14 +25,14 @@
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" class="form-control" id="name" placeholder="Nome da estação"
-                            value={{detalhesEstacao.nome}} [readonly]="enableCampos">
+                            [(ngModel)]="detalhesEstacao.nome"  [disabled]="enableCampos">
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label for="id">Id</label>
                         <input type="text" class="form-control" id="id" placeholder="Id"
-                            value={{detalhesEstacao.id}} [readonly]="enableCampos">
+                        [(ngModel)]="detalhesEstacao.id" [disabled]="enableCampos">
                     </div>
                 </div>
             </div>
@@ -45,14 +47,14 @@
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" class="form-control" id="name" placeholder="Nome da estação"
-                            value={{operador.nome}} [readonly]="enableCampos">
+                            value={{operador.nome}} [disabled]="enableCampos">
                     </div>
                 </div>
                 <div class="col-sm-4" *ngFor="let telefone of operador.telefones">
                     <div class="form-group">
                         <label for="fone">Fone</label>
                         <input type="text" class="form-control" id="fone" placeholder="fone" value={{telefone.fone}}
-                        [readonly]="enableCampos">
+                        [disabled]="enableCampos">
                     </div>
                 </div>
             </div>
@@ -67,14 +69,14 @@
                     <div class="form-group">
                         <label for="nome">Nome</label>
                         <input type="text" class="form-control" id="nome" placeholder="Nome da estação"
-                            value={{detalhesEstacao.supervisor.nome}} [readonly]="enableCampos">
+                            value={{detalhesEstacao.supervisor.nome}} [disabled]="enableCampos">
                     </div>
                 </div>
                 <div class="col-sm-4" *ngFor="let tel of detalhesEstacao.supervisor.telefones">
                     <div class="form-group">
                         <label for="fone">Fone</label>
                         <input type="text" class="form-control" id="fone" placeholder="fone" value="{{tel.fone}}"
-                        [readonly]="enableCampos">
+                        [disabled]="enableCampos">
                     </div>
                 </div>
             </div>
@@ -89,21 +91,21 @@
                     <div class="form-group">
                         <label for="class">Classe</label>
                         <input type="text" class="form-control" id="class" placeholder="Nome da estação"
-                            value={{detalhesEstacao.dadosenel.classe}} [readonly]="enableCampos">
+                            value={{detalhesEstacao.dadosenel.classe}} [disabled]="enableCampos">
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="form-group">
                         <label for="end">Endereço</label>
                         <input type="text" class="form-control" id="end" placeholder="Endereço"
-                            value="{{detalhesEstacao.dadosenel.endereco}}" [readonly]="enableCampos">
+                            value="{{detalhesEstacao.dadosenel.endereco}}" [disabled]="enableCampos">
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="uc">UC</label>
                         <input type="text" class="form-control" id="uc" placeholder="fone"
-                            value="{{detalhesEstacao.dadosenel.uc}}" [readonly]="enableCampos">
+                            value="{{detalhesEstacao.dadosenel.uc}}" [disabled]="enableCampos">
                     </div>
                 </div>
             </div>
@@ -111,8 +113,8 @@
         </div>
     </div>
     <div id="buttons">
-        <button class="btn btn-primary">Adicionar</button>
-        <button (click)="enable()" class="btn btn-success">Editar</button>
+        <button (click)="update(detalhesEstacao)" [disabled]="enableCampos" class="btn btn-primary">Atualizar</button>
+        <button (click)="enable()" class="btn btn-success">{{editCancel}}</button>
         <button class="btn btn-danger">Excluir</button>
         <button [routerLink]="['']" class="btn btn-dark">Voltar</button>
     </div>

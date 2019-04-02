@@ -11,7 +11,7 @@ import { delay, map } from 'rxjs/operators';
 export class EstacoesService {
 
   //private _url = 'https://localhost:5001/api/estacao';
-  private readonly Api = 'http://localhost:3000/estacoes';
+  //private readonly Api = 'http://localhost:3000/estacoes';
 
   constructor(private _http: HttpClient,
               private fireDb: AngularFireDatabase) { }
@@ -49,7 +49,7 @@ export class EstacoesService {
 
   PesquisarEstacao(id: Number) {
     //return this._http.get<estacao>(`${this.Api}/${id}`);
-    return this.fireDb.object(`estacoes/${id}`).valueChanges();
+    return this.fireDb.object<estacao>(`estacoes/${id}`).valueChanges();
   }
 
 }
