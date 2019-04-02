@@ -10,11 +10,13 @@ import { EstacoesComponent } from './estacoes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AddEstacaoComponent } from './add-estacao/add-estacao.component';
 @NgModule({
     declarations: [
         DetalheEstacaoComponent,
         EstacaoNaoEncontradaComponent,
-        EstacoesComponent
+        EstacoesComponent,
+        AddEstacaoComponent
     ],
     imports: [
         CommonModule,

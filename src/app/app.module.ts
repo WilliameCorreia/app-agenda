@@ -8,6 +8,10 @@ import { ContainerComponent } from './container/container.component';
 import { ContatosComponent } from './contatos/contatos.component';
 import { AppRoutingModule } from './app.routing.module';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    estacoesModule      
+    estacoesModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
