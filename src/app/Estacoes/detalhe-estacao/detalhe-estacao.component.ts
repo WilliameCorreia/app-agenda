@@ -13,9 +13,9 @@ import { estacao } from 'src/app/modelo/Estacao';
 
 export class DetalheEstacaoComponent implements OnInit {
 
-  id: number;
+  id: string;
   inscricao: Subscription;
-  detalhesEstacao: estacao;
+  detalhesEstacao: any;
   enableCampos: boolean = true;
   editCancel: string = "Editar";
 
@@ -54,7 +54,7 @@ export class DetalheEstacaoComponent implements OnInit {
 
   update(estacao: estacao){
     console.log(estacao);
-    this.estacaoService.addEstacao(estacao);
+    this.estacaoService.updateEstacao(estacao, this.id);
   }
 
 }

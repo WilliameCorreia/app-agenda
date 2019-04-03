@@ -47,3 +47,6 @@ header p {
 .form-check-inline{
     padding: 20px;
 }
+button{
+    margin-left: auto;
+}

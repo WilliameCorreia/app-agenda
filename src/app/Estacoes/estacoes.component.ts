@@ -21,12 +21,13 @@ export class EstacoesComponent implements OnInit, OnDestroy {
   subcriber = new Subscription();
 
   constructor(private estacoesService: EstacoesService) {
-    this.dataSource.filterPredicate = (data: estacao, filter: string) => {
+    this.dataSource.filterPredicate = (data: any, filter: string) => {
       return data.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
         || data.tipo.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
         || data.supervisor.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
         || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
-        || data.operadores[0].nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
+        || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
+        || data.operador1.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
     };
     console.log(this.dataSource)
   }
@@ -35,7 +36,7 @@ export class EstacoesComponent implements OnInit, OnDestroy {
     this.subcriber = this.estacoesService.getEstacoes()
       .subscribe(dados => {
         this.dataSource.data = dados;
-        this.displayedColumns = ['tipo', 'nome', 'operador', 'supervisor', 'area', 'detalhes'];
+        this.displayedColumns = ['tipo', 'nome', 'operador1', 'supervisor', 'area', 'detalhes'];
         this.dataSource.paginator = this.paginator;  
       },
         error => {

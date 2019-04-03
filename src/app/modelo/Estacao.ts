@@ -2,7 +2,7 @@ import { Supervisor } from './Supervisor';
 import { Operador } from './Operador';
 import { DadosEnel } from './DadosEnel';
 
-export interface estacao{
+export class estacao{
     id: number;
     tipo: string;
     nome: string;

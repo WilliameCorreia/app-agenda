@@ -47,7 +47,7 @@ export class EstacoesService {
   }
 
 
-  PesquisarEstacao(id: Number) {
+  PesquisarEstacao(id: string) {
     //return this._http.get<estacao>(`${this.Api}/${id}`);
     return this.fireDb.object<estacao>(`estacoes/${id}`).valueChanges();
   }

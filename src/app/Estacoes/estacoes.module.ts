@@ -1,7 +1,7 @@
 import { EstacoesRoutingModule } from './estacoes.routing.module';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DetalheEstacaoComponent } from './detalhe-estacao/detalhe-estacao.component';
@@ -23,6 +23,7 @@ import { AddEstacaoComponent } from './add-estacao/add-estacao.component';
         FormsModule,
         HttpClientModule,
         EstacoesRoutingModule,
+        ReactiveFormsModule,
         BrowserAnimationsModule,
         MatTableModule,
         MatFormFieldModule,

@@ -1,5 +1,5 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <div class="col-12 cardEstacao">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="col-10 cardEstacao">
     <div class="card">
       <div class="card-header">
         <h6>Dados da Estação</h6>
@@ -13,7 +13,7 @@
         <div class="row">
           <div class="form-group col-sm-3">
             <label for="ccmonth">Tipo</label>
-            <select class="form-control" id="ccmonth">
+            <select formControlName="tipo" class="form-control" id="ccmonth">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -22,87 +22,126 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label for="name">Nome</label>
-              <input name="nome" [ngModel] type="text" class="form-control" id="name" placeholder="Nome da estação">
+              <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação">
             </div>
           </div>
           <div class="col-sm-3">
             <div class="form-group">
               <label for="id">Id</label>
-              <input name="id" [ngModel] type="text" class="form-control" id="id" placeholder="Id">
+              <input formControlName="id" type="text" class="form-control" id="id" placeholder="Id">
             </div>
           </div>
         </div>
         <!--/.row-->
         <div>
           <h6 class="modal-title" id="TitleOperacao">
-            Operação
+            Operação 1
           </h6>
         </div>
-        <div ngModelGroup="operador">
-          <div ngModelGroup="operador1" class="row form-group">
-            <div class="col-sm-4">
+        <div formGroupName="operador1" class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
               <label for="name">Nome</label>
-              <input name="nome" [ngModel] type="text" class="form-control" id="name" placeholder="Nome do operador">
-            </div>
-            <div ngModelGroup="fone" class="row">
-              <div ngModelGroup="fone1" class="col-sm-5">
-                <label for="fone">Fone</label>
-                <input name="fone" [ngModel] type="text" class="form-control" id="fone" placeholder="fone">
-              </div>
-              <div ngModelGroup="fone2" class="col-sm-5">
-                <label for="fone">Fone</label>
-                <input name="fone" [ngModel] type="text" class="form-control" id="fone" placeholder="fone">
-              </div>
+              <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação">
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="fone">Fone</label>
+              <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="fone">Fone</label>
+              <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>
+          </div>
+        </div>        
+        <!--/.row-->
+
+        <!--/.row-->
+        <div>
+          <h6 class="modal-title" id="TitleOperacao">
+            Operação 2
+          </h6>
         </div>
-        <!--/.row supervisor-->
+        <div formGroupName="operador2" class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="fone">Fone</label>
+              <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="fone">Fone</label>
+              <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>
+          </div>
+        </div>        
+        <!--/.row-->
+
         <div>
           <h6 class="modal-title" id="TitleSupervisor">
             Supervisão
           </h6>
         </div>
-        <div ngModelGroup="supervisor" class="row">
-          <div class="col-sm-4">
+        <div formGroupName="supervisor" class="row">
+          <div class="col-sm-3">
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input name="nome" [ngModel] type="text" class="form-control" id="nome" placeholder="Nome da estação">
+              <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome da estação">
             </div>
           </div>
-          <div ngModelGroup="fone" class="col-sm-4">
-            <div ngModelGroup="fone1" class="form-group">
+          <div class="col-sm-3">
+            <div class="form-group">
               <label for="fone">Fone</label>
-              <input name="fone" [ngModel] type="text" class="form-control" id="fone" placeholder="fone">
+              <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone">
             </div>
-            <div ngModelGroup="fone2" class="form-group">
-                <label for="fone">Fone</label>
-                <input name="fone" [ngModel] type="text" class="form-control" id="fone" placeholder="fone">
-              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="fone">Fone</label>
+              <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>                       
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="area">Area</label>
+              <input formControlName="area" type="text" class="form-control" id="fone" placeholder="fone">
+            </div>                       
           </div>
         </div>
-        <!--/.row enel-->
+        <!--/.row-->
         <div>
           <h6 class="modal-title" id="TitleEnel">
             Enel
           </h6>
         </div>
-        <div ngModelGroup="dadosEnel" class="row">
+        <div formGroupName="dadosenel" class="row">
           <div class="col-sm-2">
             <div class="form-group">
               <label for="class">Classe</label>
-              <input name="classe" [ngModel] type="text" class="form-control" id="class" placeholder="classe">
+              <input formControlName="classe" type="text" class="form-control" id="class" placeholder="Nome da estação">
             </div>
           </div>
           <div class="col-sm-8">
             <div class="form-group">
               <label for="end">Endereço</label>
-              <input name="endereco" [ngModel] type="text" class="form-control" id="end" placeholder="Endereço">
+              <input formControlName="endereco" type="text" class="form-control" id="end" placeholder="Endereço">
             </div>
           </div>
           <div class="col-sm-2">
             <div class="form-group">
               <label for="uc">UC</label>
-              <input name="uc" [ngModel] type="text" class="form-control" id="uc" placeholder="uc">
+              <input formControlName="uc" type="text" class="form-control" id="uc" placeholder="fone">
             </div>
           </div>
         </div>
@@ -110,7 +149,8 @@
       </div>
     </div>
     <div id="buttons">
-      <button class="btn btn-primary" type="submit">Adicionar</button>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+      <button [routerLink]="['']" class="btn btn-info">Voltar</button>
     </div>
   </div>
 </form>
