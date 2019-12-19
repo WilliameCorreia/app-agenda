@@ -5,6 +5,7 @@ import { estacao } from './../../modelo/Estacao';
 import { EstacoesService } from './../estacoes.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-estacao',
@@ -20,33 +21,34 @@ export class AddEstacaoComponent implements OnInit {
   novaEstacao: estacao;
 
   constructor(private fireService: EstacoesService,
-    private formbuilder: FormBuilder) { }
+    private formbuilder: FormBuilder,
+    private routes: Router) { }
 
   ngOnInit() {
     this.formulario = this.formbuilder.group({
-      tipo: ["1", [Validators.required]],
-      nome: ["williame", [Validators.required]],
+      tipo: ["", [Validators.required],],
+      nome: ["", [Validators.required]],
       id: [1],
       operador1: this.formbuilder.group({
-        nome: ["williame"],
-        fone1: ["8888-8888"],
-        fone2: ["9999-9999"]
+        nome: [""],
+        fone1: [""],
+        fone2: [""]
       }),
       operador2: this.formbuilder.group({
-        nome: ["williame"],
-        fone1: ["8888-8888"],
-        fone2: ["9999-9999"]
+        nome: [""],
+        fone1: [""],
+        fone2: [""]
       }),
       supervisor: this.formbuilder.group({
-        area: ["vertente"],
-        nome: ["joel"],
-        fone1: ["9999-9999"],
-        fone2: ["8888-9999"]
+        area: [""],
+        nome: [""],
+        fone1: [""],
+        fone2: [""]
       }),
       dadosenel: this.formbuilder.group({
-        classe: ["BT"],
-        endereco: ["av. presidente castelo branco nº 1200"],
-        uc: ["432123"]
+        classe: [""],
+        endereco: [""],
+        uc: [""]
       })
     });
   }
@@ -55,7 +57,8 @@ export class AddEstacaoComponent implements OnInit {
     console.log(this.formulario.value);
     this.estacao = this.formulario.value;
     this.fireService.addEstacao(this.estacao);
-    //this.formulario.reset();
+    this.formulario.reset();
+    this.routes.navigate(['']);
   }
 
 }

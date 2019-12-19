@@ -159,7 +159,7 @@
     <div id="buttons">
         <button (click)="update(detalhesEstacao)" [disabled]="enableCampos" class="btn btn-primary">Atualizar</button>
         <button (click)="enable()" class="btn btn-success">{{editCancel}}</button>
-        <button class="btn btn-danger">Excluir</button>
+        <button (click)="delete(detalhesEstacao)" class="btn btn-danger">Excluir</button>
         <button [routerLink]="['']" class="btn btn-dark">Voltar</button>
     </div>
 </div>

@@ -10,7 +10,10 @@ import { EstacoesComponent } from './estacoes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
 import { AddEstacaoComponent } from './add-estacao/add-estacao.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 @NgModule({
     declarations: [
         DetalheEstacaoComponent,
@@ -30,7 +33,9 @@ import { AddEstacaoComponent } from './add-estacao/add-estacao.component';
         MatInputModule,
         MatPaginatorModule,
         MatButtonModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatCardModule,
+        MatDividerModule
     ],
     exports: [],
     providers: []

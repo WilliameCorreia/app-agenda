@@ -43,7 +43,10 @@ export class EstacoesService {
   }
 
   deleteEstacao(key: string){
-    this.fireDb.list(`contato/${key}`).remove();
+    this.fireDb.list('estacoes').remove(key)
+    .catch((error: any) => {
+      console.error(error);
+    });;
   }
 
 

@@ -1,26 +1,83 @@
 /* Structure */
-.cardEstacao {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-    padding-bottom: 2%;
-    text-align: left;
-    font-size: 0.5em;
-  }
-  .card-body{
-    padding: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-  
-  .cardEstacao div{
-    font-size: 12px;
-  }
-  .form-group{
-    margin-bottom: 0%;
-  }
-  .btn{
-    margin: 0.5%;
-    margin-top: 1%;
-  }
-  
+.formulario{
+  margin: 10%;
+  margin-top: 1%;
+  padding: 0px;
+}
+.card-head{
+  background-color: rgba(31, 28, 28, 0.11);
+  text-align: left;
+  padding-left: 10px;
+}
+label{
+  padding-left: 10px;
+  margin: 0px;
+}
+.btn{
+  margin: 0.5%;
+  margin-top: 1%;
+}
+.modal-title{
+  text-align: left;
+  padding: 5px;
+}
+
+/* Flex box inicio */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-item-1 {
+	flex: 1;
+}
+
+/* Flex Item */
+.item {
+	margin: 5px;
+	text-align: left;
+	font-size: 1em;
+}
+
+.container {
+	margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+	justify-content: space-around;
+}
+/* Flex box fim */

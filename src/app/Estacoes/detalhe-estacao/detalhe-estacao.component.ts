@@ -26,15 +26,9 @@ export class DetalheEstacaoComponent implements OnInit {
 
   ngOnInit() {
     this.inscricao = this.route.params.subscribe((params: any) => {
-      console.log(params);
       this.id = params['id'];
-      console.log(this.id);
       this.estacaoService.PesquisarEstacao(this.id).subscribe(dados => {
         this.detalhesEstacao = dados;
-        console.log(dados);
-        if (this.detalhesEstacao == null) {
-          this.routes.navigate(['/estacao-nao-encontrada']);
-        }
       });
     });
   }
@@ -53,8 +47,13 @@ export class DetalheEstacaoComponent implements OnInit {
   }
 
   update(estacao: estacao){
-    console.log(estacao);
     this.estacaoService.updateEstacao(estacao, this.id);
+    this.routes.navigate(['']);
+  }
+
+  delete(estacao: estacao){
+    this.estacaoService.deleteEstacao(this.id);
+    this.routes.navigate(['']);
   }
 
 }
