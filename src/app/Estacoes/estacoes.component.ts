@@ -11,7 +11,7 @@ import { Subject, empty, Subscription, Subscriber } from 'rxjs';
 })
 export class EstacoesComponent implements OnInit, OnDestroy {
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   displayedColumns: string[];
 
   pagina: number = 5;
