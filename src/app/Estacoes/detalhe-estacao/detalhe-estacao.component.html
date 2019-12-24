@@ -1,165 +1,157 @@
-<div class="col-10 cardEstacao" *ngIf="detalhesEstacao">
-    <div class="card">
-        <div class="card-header">
-            <h6>Dados da Estação</h6>
-        </div>
-        <div class="card-body">
-            <div>
-                <h6 class="modal-title" id="TitleEstacao">
-                    Estação
-                </h6>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-3">
-                    <label for="ccmonth">Tipo</label>
-                    <select [(ngModel)]="detalhesEstacao.tipo" class="form-control" id="ccmonth"
-                        [disabled]="enableCampos">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nome da estação"
-                            [(ngModel)]="detalhesEstacao.nome" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <label for="id">Id</label>
-                        <input type="text" class="form-control" id="id" placeholder="Id"
-                            [(ngModel)]="detalhesEstacao.id" [disabled]="enableCampos">
-                    </div>
-                </div>
-            </div>
-            <!--/.row-->
-            <div>
-                <h6 class="modal-title" id="TitleOperacao">
-                    Operação 1
-                </h6>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nome da estação"
-                        [(ngModel)]="detalhesEstacao.operador1.nome" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.operador1.fone1" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.operador1.fone2" [disabled]="enableCampos">
-                    </div>
-                </div>
-            </div>
-            <!--/.row-->
+<mat-card class="formulario" *ngIf="detalhesEstacao">
+  <mat-card-title class="card-head">Dados da Estação</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-            <!--/.row-->
-            <div>
-                <h6 class="modal-title" id="TitleOperacao">
-                    Operação 2
-                </h6>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nome da estação"
-                        [(ngModel)]="detalhesEstacao.operador2.nome" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.operador2.fone1" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.operador2.fone2" [disabled]="enableCampos">
-                    </div>
-                </div>
-            </div>
-            <!--/.row-->
+      <div>
+        <h6 class="modal-title" id="TitleEstacao">
+          Estação
+        </h6>
+      </div>
 
-            <div>
-                <h6 class="modal-title" id="TitleSupervisor">
-                    Supervisão
-                </h6>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome da estação"
-                        [(ngModel)]="detalhesEstacao.supervisor.nome" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.supervisor.fone1" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="fone">Fone</label>
-                        <input type="text" class="form-control" id="fone" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.supervisor.fone2" [disabled]="enableCampos">
-                    </div>
-                </div>
-            </div>
-            <!--/.row-->
-            <div>
-                <h6 class="modal-title" id="TitleEnel">
-                    Enel
-                </h6>
-            </div>
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label for="class">Classe</label>
-                        <input type="text" class="form-control" id="class" placeholder="Nome da estação"
-                        [(ngModel)]="detalhesEstacao.dadosenel.classe" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <label for="end">Endereço</label>
-                        <input type="text" class="form-control" id="end" placeholder="Endereço"
-                        [(ngModel)]="detalhesEstacao.dadosenel.endereco" [disabled]="enableCampos">
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label for="uc">UC</label>
-                        <input type="text" class="form-control" id="uc" placeholder="fone"
-                        [(ngModel)]="detalhesEstacao.dadosenel.uc" [disabled]="enableCampos">
-                    </div>
-                </div>
-            </div>
-            <!--/.row-->
+      <section class="container">
+        <div class="item basis-0-grow-2" id="tipo">
+          <label for="ccmonth">Tipo</label>
+          <select formControlName="tipo" class="form-control">
+            <option value="">Selecione</option>
+            <option value="EEE">EEE</option>
+            <option value="ETE">ETE</option>
+          </select>
+          <div *ngIf="Isvalidation(formulario.controls['tipo'])" class="alert alert-danger">tipo é obrigatório</div>
         </div>
-    </div>
-    <div id="buttons">
-        <button (click)="update(detalhesEstacao)" [disabled]="enableCampos" class="btn btn-primary">Atualizar</button>
-        <button (click)="enable()" class="btn btn-success">{{editCancel}}</button>
-        <button (click)="delete(detalhesEstacao)" class="btn btn-danger">Excluir</button>
-        <button [routerLink]="['']" class="btn btn-dark">Voltar</button>
-    </div>
-</div>
+        <div class="item basis-auto-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
+          <div *ngIf="Isvalidation(formulario.controls['nome'])" class="alert alert-danger">nome é obrigatório</div>
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="id">Utr</label>
+          <input formControlName="id" type="text" class="form-control" id="id">
+        </div>
+      </section>
+
+      <div>
+        <h6 class="modal-title" id="TitleOperacao">
+          Operador 1
+        </h6>
+      </div>
+
+      <section formGroupName="operador1" class="container flex">
+        <div class="item basis-0-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+      </section>
+
+      <div>
+        <h6 class="modal-title" id="TitleOperacao">
+          Operador 2
+        </h6>
+      </div>
+
+      <section formGroupName="operador2" class="container flex">
+        <div class="item basis-0-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação"></div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone"></div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone"></div>
+      </section>
+
+      <div>
+        <h6 class="modal-title" id="TitleSupervisor">
+          Supervisão
+        </h6>
+      </div>
+
+      <section formGroupName="supervisor" class="container flex">
+        <div class="item basis-0-grow-2">
+          <label for="nome">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Estação"></div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="area">Area</label>
+          <select formControlName="area" class="form-control" id="area">
+            <option value="">Selecione</option>
+            <option value="NORTE">VERTENTE</option>
+            <option value="NORTE">NORTE</option>
+            <option value="SUL">SUL</option>
+            <option value="LESTE">LESTE</option>
+            <option value="OESTE">OESTE</option>
+          </select>
+        </div>
+      </section>
+
+      <div>
+        <h6 class="modal-title" id="TitleEnel">
+          Enel
+        </h6>
+      </div>
+
+      <section formGroupName="dadosenel" class="container flex">
+        <div class="item basis-0-grow-2">
+          <label for="class">Classe</label>
+          <select formControlName="classe" class="form-control" id="classe">
+            <option value="">Selecione</option>
+            <option value="AT">AT</option>
+            <option value="BT">BT</option>
+          </select>
+          <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['classe'])" class="alert alert-danger">
+            classe é obrigatório</div>
+        </div>
+        <div class="item basis-auto-grow-2">
+          <label for="end">Endereço</label>
+          <input formControlName="endereco" type="text" class="form-control" id="end" placeholder="Endereço">
+          <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['endereco'])" class="alert alert-danger">
+            Endereço é obrigatório</div>
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="uc">UC</label>
+          <input formControlName="uc" type="text" class="form-control" id="uc" placeholder="UC">
+          <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['uc'])" class="alert alert-danger">UC é
+            obrigatório</div>
+        </div>
+      </section>
+
+      <section class="container flex flex-start">
+        <div class="item">
+          <button (click)="update(detalhesEstacao)" [disabled]="enableCampos" class="btn btn-primary">Atualizar</button>
+        </div>
+        <div class="item">
+          <button (click)="enable()" class="btn btn-success">{{editCancel}}</button>
+        </div>
+        <div class="item">
+          <button (click)="delete(detalhesEstacao)" class="btn btn-danger">Excluir</button>
+        </div>
+        <div class="item">
+          <button [routerLink]="['']" class="btn btn-dark">Voltar</button>
+        </div>
+      </section>
+
+    </form>
+  </mat-card-content>
+</mat-card>

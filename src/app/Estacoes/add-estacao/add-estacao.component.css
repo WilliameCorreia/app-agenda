@@ -20,6 +20,13 @@ label{
 .modal-title{
   text-align: left;
   padding: 5px;
+  background-color: rgba(31, 28, 28, 0.05);
+}
+
+.alert-danger{
+	padding: 0px;
+	text-align: center;
+	margin: 0px;
 }
 
 /* Flex box inicio */
@@ -43,10 +50,11 @@ label{
 }
 
 .container {
+	max-width: 100%;
+	padding: 0px;
 	margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 0px;
-  margin: 0px;
+	display: flex;
+	border: 1px solid #ccc;
 }
 
 h1 {
@@ -61,23 +69,73 @@ body {
 	color: #333;
 }
 
-.flex-start {
-	justify-content: flex-start;
+
+
+.basis-auto {
+	flex: 1 1 auto;
 }
 
-.flex-end {
-	justify-content: flex-end;
+.basis-auto-grow-2 {
+	flex: 2 1 auto;
 }
 
-.center {
-	justify-content: center;
+.basis-auto-width {
+	flex: 1 1 auto;
+	width: 60px;
 }
 
-.space-between {
-	justify-content: space-between;
+.basis-auto-grow-0 {
+	flex: 0 1 auto;
 }
 
-.space-around {
-	justify-content: space-around;
+/* FLEX BASIS AUTO FIM */
+
+/* FLEX BASIS 0 */
+
+.basis-0 {
+	flex: 1;
 }
+
+/* O tamanho total é de duas vezes dos itens com flex: 1; */
+.basis-0-grow-2 {
+	flex: 2;
+}
+
+.basis-0-width {
+	flex: 1;
+	width: 120px;
+	min-width: 80px;
+}
+
+.basis-0-grow-0 {
+	flex: 0 1 0;
+}
+
+/* FLEX BASIS 0 FIM */
+
+.basis-numero-container {
+	flex-wrap: wrap;
+}
+
+.basis-110 {
+	flex: 0 1 110px;
+}
+
+.basis-300 {
+	flex: 0 1 300px;
+}
+
+.basis-110-porcento {
+	flex: 0 1 calc(25% - 10px);
+}
+
+.basis-110-grow-1 {
+	flex: 1 1 110px;
+}
+
+.basis-600-grow-1 {
+	flex: 1 1 600px;
+}
+
+
 /* Flex box fim */

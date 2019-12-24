@@ -13,6 +13,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import { AddEstacaoComponent } from './add-estacao/add-estacao.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTabsModule} from '@angular/material/tabs';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
     declarations: [
@@ -35,7 +40,10 @@ import {MatDividerModule} from '@angular/material/divider';
         MatButtonModule,
         MatProgressSpinnerModule,
         MatCardModule,
-        MatDividerModule
+        MatDividerModule,
+        NgxMaskModule.forRoot(options),
+        MatTooltipModule,
+        MatTabsModule
     ],
     exports: [],
     providers: []

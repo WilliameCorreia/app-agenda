@@ -1,25 +1,141 @@
 /* Structure */
-.cardEstacao {
-  margin-left: auto;
-  margin-right: auto;
+.formulario{
+  margin: 10%;
   margin-top: 1%;
-  padding-bottom: 2%;
+  padding: 0px;
+}
+.card-head{
+  background-color: rgba(31, 28, 28, 0.11);
   text-align: left;
-  font-size: 0.5em;
+  padding-left: 10px;
 }
-.card-body{
-  padding: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-.cardEstacao div{
-  font-size: 12px;
-}
-.form-group{
-  margin-bottom: 0%;
+label{
+  padding-left: 10px;
+  margin: 0px;
 }
 .btn{
   margin: 0.5%;
   margin-top: 1%;
 }
+.modal-title{
+  text-align: left;
+  padding: 5px;
+  background-color: rgba(31, 28, 28, 0.05);
+}
+
+.alert-danger{
+	padding: 0px;
+	text-align: center;
+	margin: 0px;
+}
+
+/* Flex box inicio */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-item-1 {
+	flex: 1;
+}
+
+/* Flex Item */
+.item {
+	margin: 5px;
+	text-align: left;
+	font-size: 1em;
+}
+
+.container {
+	max-width: 100%;
+	padding: 0px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}
+
+
+
+.basis-auto {
+	flex: 1 1 auto;
+}
+
+.basis-auto-grow-2 {
+	flex: 2 1 auto;
+}
+
+.basis-auto-width {
+	flex: 1 1 auto;
+	width: 60px;
+}
+
+.basis-auto-grow-0 {
+	flex: 0 1 auto;
+}
+
+/* FLEX BASIS AUTO FIM */
+
+/* FLEX BASIS 0 */
+
+.basis-0 {
+	flex: 1;
+}
+
+/* O tamanho total é de duas vezes dos itens com flex: 1; */
+.basis-0-grow-2 {
+	flex: 2;
+}
+
+.basis-0-width {
+	flex: 1;
+	width: 120px;
+	min-width: 80px;
+}
+
+.basis-0-grow-0 {
+	flex: 0 1 0;
+}
+
+/* FLEX BASIS 0 FIM */
+
+.basis-numero-container {
+	flex-wrap: wrap;
+}
+
+.basis-110 {
+	flex: 0 1 110px;
+}
+
+.basis-300 {
+	flex: 0 1 300px;
+}
+
+.basis-110-porcento {
+	flex: 0 1 calc(25% - 10px);
+}
+
+.basis-110-grow-1 {
+	flex: 1 1 110px;
+}
+
+.basis-600-grow-1 {
+	flex: 1 1 600px;
+}
+
+
+/* Flex box fim */

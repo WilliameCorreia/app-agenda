@@ -9,41 +9,51 @@
         </h6>
       </div>
 
-      <section class="container flex">
-          <div class="item flex-item-1"><label for="ccmonth">Tipo</label>
-            <select formControlName="tipo" class="form-control" id="ccmonth">
-              <option [selected]="1" >Selecione</option>
+      <section class="container">
+          <div class="item basis-0-grow-2" id="tipo">
+            <label for="ccmonth">Tipo</label>
+            <select formControlName="tipo" class="form-control">
+              <option value="" >Selecione</option>
               <option value="EEE">EEE</option>
               <option value="ETE">ETE</option>
-            </select></div>
-          <div class="item flex-item-1">
+            </select>
+            <div *ngIf="Isvalidation(formulario.controls['tipo'])"
+            class="alert alert-danger">tipo é obrigatório</div>
+          </div>
+          <div class="item basis-auto-grow-2">
             <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação"></div>
-          <div class="item flex-item-1">
-            <label for="id">Id</label>
-            <input formControlName="id" type="text" class="form-control" id="id" placeholder="Id"></div>
+            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
+            <div *ngIf="Isvalidation(formulario.controls['nome'])"
+            class="alert alert-danger">nome é obrigatório</div>
+          </div>
+          <div class="item basis-0-grow-2">
+            <label for="id">Utr</label>
+            <input formControlName="id" type="text" class="form-control" id="id" placeholder="Utr">
+          </div>
       </section>
-      
-      <mat-divider></mat-divider>
+    
       <div>
         <h6 class="modal-title" id="TitleOperacao">
           Operador 1
         </h6>
       </div>
 
-      <section class="container flex">
-          <div class="item flex-item-1">
+      <section formGroupName="operador1" class="container flex">
+          <div class="item basis-0-grow-2">
             <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação"></div>
-          <div class="item flex-item-1">
+            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
+          </div>
+          <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone"></div>
-          <div class="item flex-item-1">
+            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000"
+            class="form-control" id="fone" placeholder="Fone">
+          </div>
+          <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone"></div>
+            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000"
+            class="form-control" id="fone" placeholder="Fone">
+          </div>
         </section>
-
-      <mat-divider></mat-divider>
 
       <div>
         <h6 class="modal-title" id="TitleOperacao">
@@ -51,19 +61,19 @@
         </h6>
       </div>
 
-      <section class="container flex">
-          <div class="item flex-item-1">
+      <section formGroupName="operador2" class="container flex">
+          <div class="item basis-0-grow-2">
             <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome da estação"></div>
-          <div class="item flex-item-1">
+            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação"></div>
+          <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone"></div>
-          <div class="item flex-item-1">
+            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" 
+            class="form-control" id="fone" placeholder="Fone"></div>
+          <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone"></div>
+            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" 
+            class="form-control" id="fone" placeholder="Fone"></div>
         </section>
-
-      <mat-divider></mat-divider>
 
       <div>
         <h6 class="modal-title" id="TitleSupervisor">
@@ -71,25 +81,32 @@
         </h6>
       </div>
 
-      <section class="container flex">
-        <div class="item flex-item-1">
+      <section formGroupName="supervisor" class="container flex">
+        <div class="item basis-0-grow-2">
           <label for="nome">Nome</label>
-          <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome da estação"></div>
-        <div class="item flex-item-1">
+          <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Estação"></div>
+        <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" class="form-control" id="fone" placeholder="fone">
+            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" 
+            class="form-control" id="fone" placeholder="Fone">
         </div>
-        <div class="item flex-item-1">
+        <div class="item basis-0-grow-2">
             <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" class="form-control" id="fone" placeholder="fone">
+            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" 
+            class="form-control" id="fone" placeholder="Fone">
         </div>
-        <div class="item flex-item-1">
-            <label for="area">Area</label>
-            <input formControlName="area" type="text" class="form-control" id="fone" placeholder="fone">
+        <div class="item basis-0-grow-2">
+          <label for="area">Area</label>
+          <select formControlName="area" class="form-control" id="area">
+            <option value="" >Selecione</option>
+            <option value="NORTE">VERTENTE</option>
+            <option value="NORTE">NORTE</option>
+            <option value="SUL">SUL</option>
+            <option value="LESTE">LESTE</option>
+            <option value="OESTE">OESTE</option>
+          </select>
         </div>
       </section>
-
-      <mat-divider></mat-divider>
 
       <div>
         <h6 class="modal-title" id="TitleEnel">
@@ -97,20 +114,30 @@
         </h6>
       </div>
 
-      <section class="container flex">
-        <div class="item flex-item-1">
+      <section formGroupName="dadosenel" class="container flex">
+        <div class="item basis-0-grow-2">
             <label for="class">Classe</label>
-            <input formControlName="classe" type="text" class="form-control" id="class" placeholder="Nome da estação">
-        </div>
-        <div class="item flex-item-1">
+            <select formControlName="classe" class="form-control" id="classe">
+              <option value="" >Selecione</option>
+              <option value="AT">AT</option>
+              <option value="BT">BT</option>
+            </select>
+            <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['classe'])"
+            class="alert alert-danger">classe é obrigatório</div>
+          </div>
+        <div class="item basis-auto-grow-2">
           <label for="end">Endereço</label>
-          <input formControlName="endereco" type="text" class="form-control" id="end" placeholder="Endereço"></div>
-        <div class="item flex-item-1">
+          <input formControlName="endereco" type="text" class="form-control" id="end" placeholder="Endereço">
+          <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['endereco'])"
+            class="alert alert-danger">Endereço é obrigatório</div>
+        </div>
+        <div class="item basis-0-grow-2">
           <label for="uc">UC</label>
-          <input formControlName="uc" type="text" class="form-control" id="uc" placeholder="fone"></div>
+          <input formControlName="uc" type="text" class="form-control" id="uc" placeholder="UC">
+          <div *ngIf="Isvalidation(formulario.controls['dadosenel'].controls['uc'])"
+            class="alert alert-danger">UC é obrigatório</div>
+        </div>
       </section>
-
-      <mat-divider></mat-divider>
 
       <section class="container flex flex-start">
         <div class="item">

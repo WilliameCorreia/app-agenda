@@ -1,10 +1,7 @@
-import { Telefone } from './../../modelo/Telefone';
-import { DadosEnel } from './../../modelo/DadosEnel';
-import { Operador } from './../../modelo/Operador';
 import { estacao } from './../../modelo/Estacao';
 import { EstacoesService } from './../estacoes.service';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input} from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,15 +17,15 @@ export class AddEstacaoComponent implements OnInit {
 
   novaEstacao: estacao;
 
-  constructor(private fireService: EstacoesService,
+  constructor(private estacaoService: EstacoesService,
     private formbuilder: FormBuilder,
     private routes: Router) { }
 
   ngOnInit() {
     this.formulario = this.formbuilder.group({
-      tipo: ["", [Validators.required],],
+      tipo: ["", [Validators.required]],
       nome: ["", [Validators.required]],
-      id: [1],
+      id: [""],
       operador1: this.formbuilder.group({
         nome: [""],
         fone1: [""],
@@ -46,19 +43,40 @@ export class AddEstacaoComponent implements OnInit {
         fone2: [""]
       }),
       dadosenel: this.formbuilder.group({
-        classe: [""],
-        endereco: [""],
-        uc: [""]
+        classe: ["", [Validators.required]],
+        endereco: ["", [Validators.required]],
+        uc: ["", [Validators.required]]
       })
     });
   }
 
+  Isvalidation?(teste: FormControl){
+    return (teste.hasError('required') && teste.touched);
+  }
+
+  verificaValidacoesForm(formgroup: FormGroup){
+    Object.keys(formgroup.controls).forEach(campo => {
+      const controle = formgroup.get(campo);
+      controle.markAsTouched();
+      if(controle instanceof FormGroup){
+        this.verificaValidacoesForm(controle);
+      }
+    });
+  }
+
   onSubmit() {
-    console.log(this.formulario.value);
-    this.estacao = this.formulario.value;
-    this.fireService.addEstacao(this.estacao);
-    this.formulario.reset();
-    this.routes.navigate(['']);
+    if (this.formulario.valid) {
+      console.log(this.formulario.value);
+      this.estacao = this.formulario.value;
+      this.estacaoService.addEstacao(this.estacao);
+      this.formulario.reset();
+      this.routes.navigate(['']);
+    } else {
+      console.log("formulário Inválido");
+      console.log(this.formulario);
+      this.verificaValidacoesForm(this.formulario);
+    }
+
   }
 
 }
