@@ -104,4 +104,23 @@ export class DetalheEstacaoComponent implements OnInit {
     return (teste.hasError('required') && teste.touched);
   }
 
+  get formResendTipo() {
+    return this.formulario.controls['tipo'];
+  }
+  get formResendNome() {
+    return this.formulario.controls['nome'];
+  }
+  get formResendClasse() {
+    let controle = this.formulario.get('dadosenel').get('classe');    
+    return controle;
+  }
+  get formResendEnd() {
+    let controle = this.formulario.get('dadosenel').get('endereco');    
+    return controle;
+  }
+  get formResendUc() {
+    let controle = this.formulario.get('dadosenel').get('uc');    
+    return controle;
+  }
+
 }
