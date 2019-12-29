@@ -1,0 +1,5 @@
+#maps{
+    display: flex;
+    width: -webkit-fill-available;
+    height: 365px;
+}

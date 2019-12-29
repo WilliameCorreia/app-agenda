@@ -12,9 +12,10 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="" [queryParams]="{pagina:1}">Estações</a></li>
       <li class="breadcrumb-item" ><a [routerLink]="['/contatos']">Contatos</a></li>
+      <li class="breadcrumb-item" ><a [routerLink]="['/maps']">Maps</a></li>
       <button class="btn btn-light"><a [routerLink]="[ '/addstacao']">adicionar</a></button>
     </ol>    
   </nav>
   <router-outlet></router-outlet>  
-  <p>&copy; @DateTime.Now.Year - Cecoe </p>
+  <p>&copy; {{today | date:'short'}} - CECOE </p>
 </div>

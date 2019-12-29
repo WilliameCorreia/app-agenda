@@ -12,6 +12,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapsComponent } from './maps/maps.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -21,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     ContainerComponent,
     ContatosComponent,
+    MapsComponent,
     
   ],
   imports: [
@@ -31,6 +34,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.keys.gmap,
+      libraries: ["places", "geometry"]
+      /* apiKey is required, unless you are a premium customer, in which case you can use clientId */
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
