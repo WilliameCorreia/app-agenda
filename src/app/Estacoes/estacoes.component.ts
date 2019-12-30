@@ -3,6 +3,9 @@ import { EstacoesService } from '../Estacoes/estacoes.service';
 import { estacao } from '../modelo/Estacao';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Subject, empty, Subscription, Subscriber } from 'rxjs';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-estacoes',
@@ -10,6 +13,11 @@ import { Subject, empty, Subscription, Subscriber } from 'rxjs';
   styleUrls: ['./estacoes.component.css']
 })
 export class EstacoesComponent implements OnInit, OnDestroy {
+
+  generatePdf(){
+    const documentDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+    pdfMake.createPdf(documentDefinition).open();
+   }
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   displayedColumns: string[];
@@ -40,7 +48,7 @@ export class EstacoesComponent implements OnInit, OnDestroy {
         this.dataSource.paginator = this.paginator;  
       },
         error => {
-          console.log(error)
+          console.log(error);
           this.error$.next(true);
           return empty();
         },

@@ -14,8 +14,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsComponent } from './maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
-
-
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 
 @NgModule({
@@ -24,7 +23,7 @@ import { AgmCoreModule } from '@agm/core';
     ContainerComponent,
     ContatosComponent,
     MapsComponent,
-    
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +39,7 @@ import { AgmCoreModule } from '@agm/core';
       /* apiKey is required, unless you are a premium customer, in which case you can use clientId */
     })
   ],
+  entryComponents:[SnackBarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

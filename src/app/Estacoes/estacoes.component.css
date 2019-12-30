@@ -10,6 +10,16 @@ table {
     padding: 3%;
     padding-top: 0%;
   }
+  .mat-cell{
+    padding: 10px;
+  }
+  .mat-header-cell{
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  .mat-header-row{
+    background-color: #484e5226;
+  }
   .mat-paginator{
     margin: 2%;
   }

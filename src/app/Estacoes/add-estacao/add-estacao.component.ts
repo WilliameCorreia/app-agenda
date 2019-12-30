@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AddEstacaoComponent implements OnInit {
 
+  durationInSeconds = 5;
+
   estacao: estacao;
 
   formulario: FormGroup;
@@ -66,14 +68,11 @@ export class AddEstacaoComponent implements OnInit {
 
   onSubmit() {
     if (this.formulario.valid) {
-      console.log(this.formulario.value);
       this.estacao = this.formulario.value;
       this.estacaoService.addEstacao(this.estacao);
       this.formulario.reset();
       this.routes.navigate(['']);
     } else {
-      console.log("formulário Inválido");
-      console.log(this.formulario);
       this.verificaValidacoesForm(this.formulario);
     }
 

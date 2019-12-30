@@ -25,7 +25,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
         DetalheEstacaoComponent,
         EstacaoNaoEncontradaComponent,
         EstacoesComponent,
-        AddEstacaoComponent
+        AddEstacaoComponent,
     ],
     imports: [
         CommonModule,

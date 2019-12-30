@@ -5,7 +5,6 @@ import { EstacoesService } from 'src/app/Estacoes/estacoes.service';
 import { estacao } from 'src/app/modelo/Estacao';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
-
 @Component({
   selector: 'app-detalhe-estacao',
   templateUrl: './detalhe-estacao.component.html',

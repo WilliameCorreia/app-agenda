@@ -10,28 +10,26 @@
       </div>
 
       <section class="container">
-          <div class="item basis-0-grow-2" id="tipo">
-            <label for="ccmonth">Tipo</label>
-            <select formControlName="tipo" class="form-control">
-              <option value="" >Selecione</option>
-              <option value="EEE">EEE</option>
-              <option value="ETE">ETE</option>
-            </select>
-            <div *ngIf="Isvalidation(formResendTipo)"
-            class="alert alert-danger">tipo é obrigatório</div>
-          </div>
-          <div class="item basis-auto-grow-2">
-            <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
-            <div *ngIf="Isvalidation(formResendNome)"
-            class="alert alert-danger">nome é obrigatório</div>
-          </div>
-          <div class="item basis-0-grow-2">
-            <label for="id">Utr</label>
-            <input formControlName="id" type="text" class="form-control" id="id" placeholder="Utr">
-          </div>
+        <div class="item basis-0-grow-2" id="tipo">
+          <label for="ccmonth">Tipo</label>
+          <select formControlName="tipo" class="form-control">
+            <option value="">Selecione</option>
+            <option value="EEE">EEE</option>
+            <option value="ETE">ETE</option>
+          </select>
+          <div *ngIf="Isvalidation(formResendTipo)" class="alert alert-danger">tipo é obrigatório</div>
+        </div>
+        <div class="item basis-auto-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Estação">
+          <div *ngIf="Isvalidation(formResendNome)" class="alert alert-danger">nome é obrigatório</div>
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="id">Utr</label>
+          <input formControlName="id" type="text" class="form-control" id="id" placeholder="Utr">
+        </div>
       </section>
-    
+
       <div>
         <h6 class="modal-title" id="TitleOperacao">
           Operador 1
@@ -39,21 +37,21 @@
       </div>
 
       <section formGroupName="operador1" class="container flex">
-          <div class="item basis-0-grow-2">
-            <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome">
-          </div>
-          <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000"
-            class="form-control" id="fone" placeholder="Fone">
-          </div>
-          <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000"
-            class="form-control" id="fone" placeholder="Fone">
-          </div>
-        </section>
+        <div class="item basis-0-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
+        </div>
+      </section>
 
       <div>
         <h6 class="modal-title" id="TitleOperacao">
@@ -62,18 +60,18 @@
       </div>
 
       <section formGroupName="operador2" class="container flex">
-          <div class="item basis-0-grow-2">
-            <label for="name">Nome</label>
-            <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome"></div>
-          <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" 
-            class="form-control" id="fone" placeholder="Fone"></div>
-          <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" 
-            class="form-control" id="fone" placeholder="Fone"></div>
-        </section>
+        <div class="item basis-0-grow-2">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="name" placeholder="Nome"></div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone"></div>
+        <div class="item basis-0-grow-2">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone"></div>
+      </section>
 
       <div>
         <h6 class="modal-title" id="TitleSupervisor">
@@ -86,19 +84,19 @@
           <label for="nome">Nome</label>
           <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome"></div>
         <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" 
-            class="form-control" id="fone" placeholder="Fone">
+          <label for="fone">Fone</label>
+          <input formControlName="fone1" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
         </div>
         <div class="item basis-0-grow-2">
-            <label for="fone">Fone</label>
-            <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" 
-            class="form-control" id="fone" placeholder="Fone">
+          <label for="fone">Fone</label>
+          <input formControlName="fone2" type="text" mask="(00) 0-0000-0000" class="form-control" id="fone"
+            placeholder="Fone">
         </div>
         <div class="item basis-0-grow-2">
           <label for="area">Area</label>
           <select formControlName="area" class="form-control" id="area">
-            <option value="" >Selecione</option>
+            <option value="">Selecione</option>
             <option value="VERTENTE">VERTENTE</option>
             <option value="NORTE">NORTE</option>
             <option value="SUL">SUL</option>
@@ -116,38 +114,38 @@
 
       <section formGroupName="dadosenel" class="container flex">
         <div class="item basis-0-grow-2">
-            <label for="class">Classe</label>
-            <select formControlName="classe" class="form-control" id="classe">
-              <option value="" >Selecione</option>
-              <option value="AT">AT</option>
-              <option value="BT">BT</option>
-            </select>
-            <div *ngIf="Isvalidation(formResendClasse)"
-            class="alert alert-danger">classe é obrigatório</div>
-          </div>
+          <label for="class">Classe</label>
+          <select formControlName="classe" class="form-control" id="classe">
+            <option value="">Selecione</option>
+            <option value="AT">AT</option>
+            <option value="BT">BT</option>
+          </select>
+          <div *ngIf="Isvalidation(formResendClasse)" class="alert alert-danger">classe é obrigatório</div>
+        </div>
         <div class="item basis-auto-grow-2">
           <label for="end">Endereço</label>
           <input formControlName="endereco" type="text" class="form-control" id="end" placeholder="Endereço">
-          <div *ngIf="Isvalidation(formResendEnd)"
-            class="alert alert-danger">Endereço é obrigatório</div>
+          <div *ngIf="Isvalidation(formResendEnd)" class="alert alert-danger">Endereço é obrigatório</div>
         </div>
         <div class="item basis-0-grow-2">
           <label for="uc">UC</label>
           <input formControlName="uc" type="text" class="form-control" id="uc" placeholder="UC">
-          <div *ngIf="Isvalidation(formResendUc)"
-            class="alert alert-danger">UC é obrigatório</div>
+          <div *ngIf="Isvalidation(formResendUc)" class="alert alert-danger">UC é obrigatório</div>
         </div>
       </section>
 
       <section class="container flex flex-start">
         <div class="item">
-            <button type="submit" class="btn btn-primary">Adicionar</button>
+          <button type="submit" class="btn btn-primary">Adicionar</button>
         </div>
         <div class="item">
-            <button [routerLink]="['']" class="btn btn-info">Voltar</button>
+          <button [routerLink]="['']" class="btn btn-info">Voltar</button>
         </div>
       </section>
 
     </form>
+    <div class="item">
+      <button (click)="openSnackBar()" class="btn btn-info">teste</button>
+    </div>
   </mat-card-content>
 </mat-card>
