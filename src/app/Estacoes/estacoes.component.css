@@ -37,3 +37,7 @@ table {
   .spinner{
     text-align: -webkit-center;
   }
+  .btn{
+    float: left;
+    margin-top: 1.3em;
+  }

@@ -32,7 +32,6 @@ export class EstacoesComponent implements OnInit, OnDestroy {
         || data.supervisor.area.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1
         || data.operador1.nome.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) !== -1;
     };
-    console.log(this.dataSource)
   }
 
   ngOnInit() {
@@ -53,7 +52,6 @@ export class EstacoesComponent implements OnInit, OnDestroy {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue;
-    console.log(this.dataSource.filteredData);
   }
 
   ngOnDestroy(): void {
