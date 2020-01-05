@@ -7,5 +7,8 @@ export const environment = {
     projectId: "my-project-1532023975936",
     storageBucket: "",
     messagingSenderId: "930992072188"
+  },
+  keys:{
+    gmap: "AIzaSyCUsFoiew26cGU-Sw0FM_C6652TS7X0k-4"
   }
 };
