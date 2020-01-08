@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsComponent } from './maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
       apiKey: environment.keys.gmap,
       libraries: ["places", "geometry"]
       /* apiKey is required, unless you are a premium customer, in which case you can use clientId */
-    })
+    }),
+    MatTabsModule
   ],
   entryComponents:[SnackBarComponent],
   providers: [],

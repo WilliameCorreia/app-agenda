@@ -24,8 +24,8 @@ header p {
 .container-fluid{
     text-align: center;
 }
-.teste{
-    background-color: rgb(61, 35, 122);
+.mat-tab-link{
+    font-size: 1.4em;
 }
 /* container */
 

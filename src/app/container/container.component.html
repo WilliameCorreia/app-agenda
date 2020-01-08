@@ -1,6 +1,6 @@
 <header>
   <div id="header1">
-    <p>AGENDA</p>
+    <p>CECOE</p>
   </div>
   <div id="header2">
   </div>
@@ -8,13 +8,12 @@
   </div>
 </header>
 <div class="container-fluid">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="" [queryParams]="{pagina:1}">Estações</a></li>
-      <li class="breadcrumb-item" ><a [routerLink]="['/contatos']">Contatos</a></li>
-      <li class="breadcrumb-item" ><a [routerLink]="['/maps']">Maps</a></li>
-      <button class="btn btn-light"><a [routerLink]="[ '/addstacao']">adicionar</a></button>
-    </ol>    
+  <nav mat-tab-nav-bar [backgroundColor]="background">
+    <a mat-tab-link *ngFor="let link of links"
+       [routerLink]="Rotas(link)" [queryParams]="{pagina:1}"
+       (click)="activeLink = link"
+       [active]="activeLink == link"> {{link}} 
+    </a>
   </nav>
   <router-outlet></router-outlet>  
   <p>&copy; {{today | date:'short'}} - CECOE </p>
